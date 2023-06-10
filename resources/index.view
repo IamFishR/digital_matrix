@@ -1,0 +1,29 @@
+<svg viewport-fill="#000000">
+  <!-- 12 at top center -->
+  <text x="50%" y="13%" text-anchor="middle" font-size="18" fill="#333533">12</text>
+  <!-- 3 at right center -->
+  <text x="87%" y="50%" text-anchor="middle" font-size="18" fill="#333533">3</text>
+  <!-- 6 at bottom center -->
+  <text x="50%" y="87%" text-anchor="middle" font-size="18" fill="#333533">6</text>
+  <!-- 9 at left center -->
+  <text x="13%" y="50%" text-anchor="middle" font-size="18" fill="#333533">9</text>
+  <!-- date -->
+  <text x="84" y="229" text-anchor="middle" font-size="33" fill="#333533" id="date">00</text>
+  <!-- weekday -->
+  <text x="114" y="215" text-anchor="middle" font-size="13" fill="#333533" id="weekday">MON</text>
+  <!-- month -->
+  <text x="116" y="229" text-anchor="middle" font-size="13" fill="#333533" id="month">JANUARY</text>
+  <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
+    <rect x="$-2" y="-100" width="3" height="110" fill="#333533" />
+  </g>
+  <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
+    <rect x="$-3" y="-75" width="5" height="75" fill="#333533" />
+  </g>
+  <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
+    <!-- <rect x="$-2" y="-120" width="4" height="120" fill="#ff0000"  /> -->
+    <!-- with border radius -->
+    <rect x="$-2" y="-120" width="2" height="15" fill="#003566" rx="2" ry="2" />
+  </g>
+  <circle cx="50%" cy="50%" r="5" fill="#444444" />
+
+</svg>
