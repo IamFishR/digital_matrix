@@ -1,29 +1,27 @@
-<svg viewport-fill="#000000">
-  <!-- 12 at top center -->
-  <text x="50%" y="13%" text-anchor="middle" font-size="18" fill="#333533">12</text>
-  <!-- 3 at right center -->
-  <text x="87%" y="50%" text-anchor="middle" font-size="18" fill="#333533">3</text>
-  <!-- 6 at bottom center -->
-  <text x="50%" y="87%" text-anchor="middle" font-size="18" fill="#333533">6</text>
-  <!-- 9 at left center -->
-  <text x="13%" y="50%" text-anchor="middle" font-size="18" fill="#333533">9</text>
-  <!-- date -->
-  <text x="84" y="229" text-anchor="middle" font-size="33" fill="#333533" id="date">00</text>
-  <!-- weekday -->
-  <text x="114" y="215" text-anchor="middle" font-size="13" fill="#333533" id="weekday">MON</text>
-  <!-- month -->
-  <text x="116" y="229" text-anchor="middle" font-size="13" fill="#333533" id="month">JANUARY</text>
-  <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-2" y="-100" width="3" height="110" fill="#333533" />
+<svg>
+  <text x="270" y="320" text-anchor="middle" font-size="18" text-length="2" fill="#ffffff" id="name">DM</text>
+  <text x="50%" y="13%" text-anchor="middle" font-size="18" fill="#ffffff">12</text>
+  <text x="87%" y="50%" text-anchor="middle" font-size="18" fill="#ffffff">3</text>
+  <text x="50%" y="87%" text-anchor="middle" font-size="18" fill="#ffffff">6</text>
+  <text x="13%" y="50%" text-anchor="middle" font-size="18" fill="#ffffff">9</text>
+  <text x="84" y="229" text-anchor="middle" font-size="33" fill="#ffffff" id="date">00</text>
+  <text x="114" y="215" text-anchor="middle" font-size="13" fill="#ffffff" id="weekday">MON</text>
+  <text x="116" y="229" text-anchor="middle" font-size="13" fill="#ffffff" id="month">JANUARY</text>
+  <g id="mins" transform="translate(50%,50%)">
+    <rect x="$-2" y="-100" width="3" height="110" fill="#ffffff" />
   </g>
-  <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-3" y="-75" width="5" height="75" fill="#333533" />
+  <g id="hours"  transform="translate(50%,50%)">
+    <rect x="$-3" y="-75" width="5" height="75" fill="#ffffff" />
   </g>
-  <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
-    <!-- <rect x="$-2" y="-120" width="4" height="120" fill="#ff0000"  /> -->
-    <!-- with border radius -->
-    <rect x="$-2" y="-120" width="2" height="15" fill="#003566" rx="2" ry="2" />
+  <g id="secs"  transform="translate(50%,50%)">
+    <rect x="$-2" y="-118" width="2" height="115" id="sec_handle" fill="#ef233c" />
   </g>
   <circle cx="50%" cy="50%" r="5" fill="#444444" />
-
+  <gradientRect x="45%" y="45%" width="40" height="40"
+    gradient-type="radial"
+    gradient-x1="50%" gradient-y1="50%"
+    gradient-x2="50%+10" gradient-y2="50%+10"
+    gradient-color1="#ef233c"
+    gradient-color2="#000000"
+     />
 </svg>
