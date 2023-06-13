@@ -3,11 +3,11 @@ import * as messaging from "messaging";
 
 settingsStorage.setItem("name", JSON.stringify({ name: "DM" }));
 messaging.peerSocket.addEventListener("open", (evt) => {
-    console.log("Companion Socket Open");
+    // console.log("Companion Socket Open");
 });
 
 messaging.peerSocket.addEventListener("error", (err) => {
-    console.error(`Connection error: ${err.code} - ${err.message}`);
+    // console.error(`Connection error: ${err.code} - ${err.message}`);
 });
 
 settingsStorage.addEventListener("change", (evt) => {

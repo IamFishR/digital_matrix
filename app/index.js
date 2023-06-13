@@ -55,7 +55,9 @@ clock.addEventListener("tick", updateClock);
 
 // clock face without always on display mode show the clock face
 if (DM.isAODAvailable()) {
+    console.log("AOD is available");
     DM.display.addEventListener("change", () => {
+        console.log("Display: " + DM.display.on);
         if (DM.display.on) {
             updateClock();
         }
@@ -69,7 +71,6 @@ messaging.peerSocket.addEventListener("message", function (evt) {
             name.text = JSON.parse(value).name;
         }
 
-        console.log(`key: ${evt.data.payload.key} value: ${value}`);
         if (evt.data.payload.key == "color" && (value != '' || value != null)) {
             sec_handle.style.fill = JSON.parse(value);
         }
