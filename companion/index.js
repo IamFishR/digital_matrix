@@ -1,33 +1,29 @@
-import { settingsStorage } from "settings";
 import * as messaging from "messaging";
+import { settingsStorage } from "settings";
 
-settingsStorage.setItem("name", JSON.stringify({ name: "DM" }));
-messaging.peerSocket.addEventListener("open", (evt) => {
-    // console.log("Companion Socket Open");
-});
 
-messaging.peerSocket.addEventListener("error", (err) => {
-    // console.error(`Connection error: ${err.code} - ${err.message}`);
-});
 
 settingsStorage.addEventListener("change", (evt) => {
-    sendMessage(evt.key, evt.newValue);
+    if (evt.oldValue !== evt.newValue) {
+        sendMessage(evt.key, evt.newValue);
+    }
 });
 
 function sendMessage(evtKey, evtNewValue) {
-
-    let data = {
-        type: "userInput",
-        payload: {
+    if (evtNewValue) {
+        sendData({
             key: evtKey,
-            newValue: evtNewValue
-        }
+            value: JSON.parse(evtNewValue)
+        });
     }
+}
 
+function sendData(data) {
     if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
         // Send the data to peer as a message
         messaging.peerSocket.send(data);
     } else {
+        // Wait for the connection to open and try again
         messaging.peerSocket.onopen = function () {
             messaging.peerSocket.send(data);
         }

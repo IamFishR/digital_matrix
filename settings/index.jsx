@@ -1,51 +1,41 @@
-let setColor = false;
-registerSettingsPage(({ settings }) => (
-  <Page>
-    <Section
-      title={
-        <Text bold align="center">
-          Digital Matrix Settings
-        </Text>
-      }
-    >
 
-      {
-        setColor = settings.toggle
-      }
+const colors = [
+  { color: '#EC4E20' },
+  { color: '#ECB0E1' },
+  { color: '#DBFF76' },
+  { color: '#58355E' },
+  { color: '#EC0B43' },
+  { color: '#1A090D' },
+  { color: '#1A659E' },
+  { color: '#FFFFFF' },
+  { color: '#E27396' },
+]
 
-      <TextInput
-        label="Enter your name"
-        settingsKey="name"
-        placeholder="Your name"
-        maxLength={2}
-        value={settings.name}
-      />
+const myView = (props) => {
+  return (
+    <Page>
+      <Section
+        title={
+          <Text bold align="center">
+            Digital Matrix Settings
+          </Text>
+        }
+      >
+        <TextInput
+          label="Enter your name"
+          settingsKey="name"
+          placeholder="Your name"
+          maxLength={2}
+          title="Name"
+          value={props.name}
+        />
+        <ColorSelect
+          settingsKey="color"
+          colors={colors}
+        />
+      </Section>
+    </Page>
+  );
+}
 
-      <Toggle
-        settingsKey="toggle"
-        label="Use Custom Color"
-        onChange={(value) => {
-          setColor = value;
-        }}
-      />
-
-      {
-        setColor && (
-          <ColorSelect
-            settingsKey="color"
-            colors={[
-              { color: '#FF0000' },
-              { color: '#00FF00' },
-              { color: '#0000FF' },
-              { color: '#FFFF00' },
-              { color: '#00FFFF' },
-              { color: '#FF00FF' },
-              { color: '#FFFFFF' },
-              { color: '#000000' },
-            ]}
-          />
-        )
-      }
-    </Section>
-  </Page>
-));
+registerSettingsPage(myView);

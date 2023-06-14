@@ -1,7 +1,7 @@
 import clock from "clock";
 import * as document from "document";
 import DM from "../common";
-import * as messaging from "messaging";
+import * as DM_Settings from "./helper/device-settings";
 
 // Tick every second
 clock.granularity = "seconds";
@@ -14,6 +14,7 @@ let weekday = document.getElementById('weekday');
 let month = document.getElementById('month');
 let name = document.getElementById('name');
 let sec_handle = document.getElementById('sec_handle');
+let gradientRect = document.getElementById('gradientRect');
 const weekdayNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const monthfullNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novemver", "December"];
 
@@ -55,24 +56,29 @@ clock.addEventListener("tick", updateClock);
 
 // clock face without always on display mode show the clock face
 if (DM.isAODAvailable()) {
-    console.log("AOD is available");
     DM.display.addEventListener("change", () => {
-        console.log("Display: " + DM.display.on);
         if (DM.display.on) {
             updateClock();
         }
     });
 }
 
-messaging.peerSocket.addEventListener("message", function (evt) {
-    if (evt.data && evt.data.type === "userInput") {
-        let value = evt.data.payload.newValue;
-        if (evt.data.payload.key === 'name' && (value !== '' || value !== null)) {
-            name.text = JSON.parse(value).name;
-        }
 
-        if (evt.data.payload.key == "color" && (value != '' || value != null)) {
-            sec_handle.style.fill = JSON.parse(value);
-        }
+let settingsCallback = (data) => {
+    if (!data) {
+        return;
     }
-});
+
+    if (data.name) {
+        name.text = data.name.name;
+    }
+
+    if (data.color) {
+        sec_handle.style.fill = data.color;
+        gradientRect.gradient.colors.c1 = data.color;
+        date.style.fill = data.color;
+    }
+};
+
+// Settings
+DM_Settings.initialize(settingsCallback);

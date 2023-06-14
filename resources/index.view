@@ -17,11 +17,12 @@
     <rect x="$-2" y="-118" width="2" height="115" id="sec_handle" fill="#ef233c" />
   </g>
   <circle cx="50%" cy="50%" r="5" fill="#444444" />
-  <gradientRect x="45%" y="45%" width="40" height="40"
+  <gradientRect x="45%" y="45%" width="32" height="32" id="gradientRect"
     gradient-type="radial"
     gradient-x1="50%" gradient-y1="50%"
     gradient-x2="50%+10" gradient-y2="50%+10"
     gradient-color1="#ef233c"
     gradient-color2="#000000"
      />
+
 </svg>
