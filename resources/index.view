@@ -1,28 +1,39 @@
-<svg>
-  <text x="270" y="320" text-anchor="middle" font-size="18" text-length="2" fill="#ffffff" id="name">DM</text>
+<svg class="viewport">
+  <g class="background"> 
+    <image class="heart_icon" id="heart_icon" x="70" y="247" href="heart_rate_36px.png" width="16" height="17" />
+    <text x="98" y="260" text-anchor="middle" font-size="14" fill="#ffffff" text-length="3" id="heart_text">00</text>
+  </g>
+
+  <g class="background"> 
+    <image class="steps_icon" id="steps_icon" x="120" y="247" href="steps_36px.png" width="16" height="16" />
+    <text x="158" y="260" text-anchor="middle" font-size="14" fill="#ffffff" text-length="10" id="steps_text">00</text>
+  </g>
+
+  <!-- <text text-anchor="middle" font-size="18" text-length="2" fill="#ffffff" id="name">DM</text> -->
   <text x="50%" y="13%" text-anchor="middle" font-size="18" fill="#ffffff">12</text>
   <text x="87%" y="50%" text-anchor="middle" font-size="18" fill="#ffffff">3</text>
   <text x="50%" y="87%" text-anchor="middle" font-size="18" fill="#ffffff">6</text>
   <text x="13%" y="50%" text-anchor="middle" font-size="18" fill="#ffffff">9</text>
   <text x="84" y="229" text-anchor="middle" font-size="33" fill="#ffffff" id="date">00</text>
-  <text x="114" y="215" text-anchor="middle" font-size="13" fill="#ffffff" id="weekday">MON</text>
-  <text x="116" y="229" text-anchor="middle" font-size="13" fill="#ffffff" id="month">JANUARY</text>
+  <text x="119" y="215" text-anchor="middle" font-size="13" fill="#ffffff" id="weekday">MON</text>
+  <text x="119" y="229" text-anchor="middle" font-size="13" fill="#ffffff" id="month">JANUARY</text>
+
+
   <g id="mins" transform="translate(50%,50%)">
     <rect x="$-2" y="-100" width="3" height="110" fill="#ffffff" />
   </g>
-  <g id="hours"  transform="translate(50%,50%)">
+  <g id="hours" transform="translate(50%,50%)">
     <rect x="$-3" y="-75" width="5" height="75" fill="#ffffff" />
   </g>
-  <g id="secs"  transform="translate(50%,50%)">
+  <g id="secs" transform="translate(50%,50%)">
     <rect x="$-2" y="-118" width="2" height="115" id="sec_handle" fill="#ef233c" />
   </g>
-  <circle cx="50%" cy="50%" r="5" fill="#444444" />
-  <gradientRect x="45%" y="45%" width="32" height="32" id="gradientRect"
+  <circle cx="50%" cy="50%" r="5" fill="#000000" />
+  <gradientRect x="45%" y="45%" id="gradientRect"
     gradient-type="radial"
     gradient-x1="50%" gradient-y1="50%"
     gradient-x2="50%+10" gradient-y2="50%+10"
     gradient-color1="#ef233c"
     gradient-color2="#000000"
-     />
-
+  />
 </svg>

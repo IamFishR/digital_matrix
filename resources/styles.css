@@ -5,11 +5,9 @@
   text-length: 32;
 }
 
-#background {
-  width: 100%;
-  height: 100%;
+/* #background {
   fill: fb-cyan;
-}
+} */
 
 #myLabel {
   font-size: 80;
@@ -19,4 +17,33 @@
   x: 50%;
   y: 50%+40;
   fill: white;
+}
+
+.viewport {
+  viewport-fill: fb-black;
+}
+
+.heart_icon {
+  fill: white;
+}
+
+.steps_icon {
+  fill: white;
+}
+
+#secs {
+  transform-origin: bottom;
+}
+
+#mins {
+  transform-origin: bottom;
+}
+
+#hours {
+  transform-origin: bottom;
+}
+
+.name {
+  x:270;
+  y:320;
 }
